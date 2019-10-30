@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean name="address1" class="com.springframework.bean.Address">
+<constructor-arg name="city" value="Ahemdabad" type="java.lang.String"></constructor-arg>
+<constructor-arg name="state" value="Gujarat" type="java.lang.String"></constructor-arg>
+<constructor-arg name="country" value="India" type="java.lang.String"></constructor-arg>
+</bean>
+
+<bean name="address2" class="com.springframework.bean.Address">
+<constructor-arg name="city" value="mumbai" type="java.lang.String"></constructor-arg>
+<constructor-arg name="state" value="Maharasta" type="java.lang.String"></constructor-arg>
+<constructor-arg name="country" value="India" type="java.lang.String"></constructor-arg>
+</bean>
+<bean name="address3" class="com.springframework.bean.Address">
+<constructor-arg name="city" value="Delhi" type="java.lang.String"></constructor-arg>
+<constructor-arg name="state" value="Delhi" type="java.lang.String"></constructor-arg>
+<constructor-arg name="country" value="India" type="java.lang.String"></constructor-arg>
+</bean>
+<bean name="address4" class="com.springframework.bean.Address">
+<constructor-arg name="city" value="Jaipur" type="java.lang.String"></constructor-arg>
+<constructor-arg name="state" value="rajsthan" type="java.lang.String"></constructor-arg>
+<constructor-arg name="country" value="India" type="java.lang.String"></constructor-arg>
+</bean>
+
+
+
+<bean name="employeeparent" class="com.springframework.bean.Employee">
+<constructor-arg name="id" value="101" type="int"></constructor-arg>
+<constructor-arg name="name" value="Aniket Gajjar" type="java.lang.String"></constructor-arg>
+</bean>
+
+<bean name="employee" class="com.springframework.bean.Employee" parent="employeeparent">
+<constructor-arg>
+<list>
+<ref bean="address1"/>
+<ref bean="address2"/>
+<ref bean="address3"/>
+<ref bean="address4"/>
+</list>
+</constructor-arg>
+</bean>
+</beans>

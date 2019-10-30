@@ -1,0 +1,20 @@
+It is Core Spring Project
+
+we Have to Create Spring bean configuration file to create xml file 
+
+-> We can execute parameterized query using Spring JdbcTemplate by the help of execute() method of 
+	JdbcTemplate class. To use parameterized query, we pass the instance of PreparedStatementCallback 
+	in the execute method.
+
+* Syntax of execute method to use parameterized query
+     public T execute(String sql,PreparedStatementCallback<T>);  
+     
+* PreparedStatementCallback interface
+-> It processes the input parameters and output results. In such case, you don't need to care about single
+	 and double quotes.
+
+* Method of PreparedStatementCallback interface
+-> It has only one method doInPreparedStatement. Syntax of the method is given below:
+	public T doInPreparedStatement(PreparedStatement ps)throws SQLException, DataAccessException  
+
+ 

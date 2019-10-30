@@ -1,0 +1,21 @@
+-> It is Core Spring Project
+
+-> we Have to Create Spring bean configuration file to create xml file 
+
+
+
+ * ResultSetExtractor
+-> We can easily fetch the records from the database using query() method of JdbcTemplate 
+  class where we need to pass the instance of ResultSetExtractor.
+
+* Syntax of query method using ResultSetExtractor
+	public T query(String sql,ResultSetExtractor<T> rse)  
+	
+* ResultSetExtractor Interface
+-> ResultSetExtractor interface can be used to fetch records from the database.
+ It accepts a ResultSet and returns the list.
+
+* Method of ResultSetExtractor interface
+-> It defines only one method extractData that accepts ResultSet instance as a parameter.
+	 Syntax of the method is given below:
+	public T extractData(ResultSet rs)throws SQLException,DataAccessException 

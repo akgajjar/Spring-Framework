@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="address" class="com.springframework.bean.Address">
+		<property name="city" value="Ahemdabad" />
+		<property name="state" value="Gujarat" />
+		<property name="country" value="India" />
+	</bean>
+
+
+	<!-- Autowiring By Name 
+		In case of byName autowiring mode, bean id and reference 
+		name must be same.
+		
+		It internally uses setter injection. variable address 
+		name id address and also name of bean above is created is address so both 
+		must be same for autowiring with name . 
+		
+		name of bean and property name must 
+		be same. -->
+	<bean name="byname" id="Employee1"
+		class="com.springframework.bean.Employee" autowire="byName" >
+		<property name="id" value="101"/>
+		<property name="name" value="Aniket Gajjar"/>
+	</bean>
+
+
+	<!-- Autowiring By Type 
+		Autowiring Does on Property Type that is Declared 
+		on Employee class if multiple type of same bin are there in xml then it throw 
+		exception. -->
+	<bean name="bytype" id="Emp"
+		class="com.springframework.bean.Employee" autowire="byType" >
+		<property name="id" value="101"/>
+		<property name="name" value="Aniket Gajjar"/>
+		</bean>
+
+
+	<!-- Autowiring By Contructor 
+		-> In case of constructor autowiring mode, 
+		spring container injects the dependency by highest parameterized constructor. 
+		->If you have 3 constructors in a class, zero-arg, one-arg and two-arg then 
+		injection will be performed by calling the two-arg constructor. -->
+	<bean name="byconstructor" id="Employee2"
+		class="com.springframework.bean.Employee" autowire="constructor" >
+		<property name="id" value="101"/>
+		<property name="name" value="Aniket Gajjar"/>
+		</bean>
+
+	<!-- Autowiring By No /Default in this Default type , no Dependacy Inject 
+		By Auto wiring -->
+
+</beans>

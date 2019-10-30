@@ -1,0 +1,15 @@
+-> It is Core Spring Project
+
+-> we Have to Create Spring bean configuration file to create xml file 
+
+
+* Spring SimpleJdbcTemplate 
+
+-> Spring 3 JDBC supports the java 5 feature var-args (variable argument) and autoboxing by the help 
+	of SimpleJdbcTemplate class.
+
+-> SimpleJdbcTemplate class wraps the JdbcTemplate class and provides the update method where we can pass 
+arbitrary number of arguments.
+
+* Syntax of update method of SimpleJdbcTemplate class
+-> int update(String sql,Object... parameters)  
