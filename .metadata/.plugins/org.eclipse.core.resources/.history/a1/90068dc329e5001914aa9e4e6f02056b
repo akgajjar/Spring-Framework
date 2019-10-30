@@ -1,0 +1,11 @@
+package com.springframework.test;
+
+public class testapplication {
+	
+	public static void main(String[] args) {
+		
+		
+		
+	}
+
+}

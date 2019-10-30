@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="springexample"/>
+<aop-project name="1) MyFirstSpringApplicationWithCoreJava"/>
+<aop-project name="23)SpringmvcBasicProject"/>
+</aop-reference-model>

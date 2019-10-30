@@ -1,0 +1,5 @@
+package com.springframework.bean;
+
+public class User {
+
+}

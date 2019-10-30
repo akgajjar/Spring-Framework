@@ -1,0 +1,13 @@
+package com.springframework.dao;
+
+import org.springframework.orm.hibernate3.HibernateTemplate;
+
+public class employeedao   {
+
+	HibernateTemplate temp;
+
+	public void setTemp(HibernateTemplate temp) {
+		this.temp = temp;
+	}
+	
+}

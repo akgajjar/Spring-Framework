@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+<bean id="User1" class="com.springframework.bean.User">
+<property name="id" value="101"/>
+<property name="name" value="Aniket Gajjar"/>
+<property name="email" value="a@gmail.com"/>
+</bean>
+<bean id="User2" class="com.springframework.bean.User">
+<property name="id" value="102"/>
+<property name="name" value="Prachi Jain"/>
+<property name="email" value="p@gmail.com"/></bean>
+
+<bean id="answer1" class="com.springframework.bean.Answer">
+<property name="id" value="1"/>
+<property name="answer" value="Java is a Programming Language"/>
+<property name="postedDate" value="12/12/2001"></property>
+</bean>
+<bean id="answer2" class="com.springframework.bean.Answer">
+<property name="id" value="2"/>
+<property name="answer" value="Java is a Iceland"/>
+<property name="postedDate" value="12/12/2003"></property>
+</bean>
+
+<bean id="question" class="com.springframework.bean.Question">  
+<constructor-arg value="11"></constructor-arg>  
+<constructor-arg value="What is Java?"></constructor-arg>  
+<constructor-arg>  
+<map>  
+<entry value-ref="answer1"  key-ref="User1"></entry>  
+<entry value-ref="answer2"  key-ref="User2"></entry>  
+</map>  
+</constructor-arg>  
+</bean>  
+</beans>

@@ -1,0 +1,56 @@
+package com.jdbcTemplate;
+
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+public class testapplication {
+
+	
+	public static void main(String[] args) {
+		
+		ApplicationContext c=new ClassPathXmlApplicationContext("beans.xml");
+		
+		studentDao dao=(studentDao) c.getBean("Studentdao");
+		
+		
+		student s = new student(101,"Aniket","Gajjar");
+		System.out.println("Insert Student : ");
+		
+		System.out.println("Affected Rows : "+dao.savestudent(s));
+		s = new student(101,"Yesha","Gajjar");
+		System.out.println("Affected Rows : "+dao.savestudent(s));
+		s = new student(102,"Prachi","Jain");
+		System.out.println("Affected Rows : "+dao.savestudent(s));
+		s = new student(101,"JayDeep","Warrier");
+		System.out.println("Affected Rows : "+dao.savestudent(s));
+		
+		
+		
+		s = new student(101,"Yesha","Gajjar");
+		System.out.println("Update Student : ");
+		System.out.println("Affected Rows : "+dao.updatestudent(s));
+		
+		
+		System.out.println("Get all Students : ");
+		
+		List<Map<String,Object>> list = dao.getstudent(101);
+		
+		for(Map<String,Object> map : list)
+		{
+			System.out.println(map);
+		}
+		
+		
+		System.out.println("Del Student : ");
+		
+		System.out.println("Affected Rows : "+dao.deletestudent(101));
+		 
+		
+		
+	}
+}

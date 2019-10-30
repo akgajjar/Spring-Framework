@@ -1,0 +1,15 @@
+package com.springframework.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.springframework.dao.employeedao;
+
+@Controller
+public class employeecontroller {
+
+	@Autowired
+	employeedao dao;
+	
+	
+}

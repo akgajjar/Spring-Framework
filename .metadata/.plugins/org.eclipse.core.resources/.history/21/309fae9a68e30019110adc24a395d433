@@ -1,0 +1,33 @@
+package com.springframework.bean;
+
+import java.util.List;
+
+public class Employee {
+
+	private int id;
+	private String Name;
+	
+	public Employee() {
+		super();
+	}
+	
+
+
+	public Employee(int id, String name) {
+		super();
+		this.id = id;
+		Name = name;
+	}
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", Name=" + Name + "]";
+	}
+	
+	
+	
+}

@@ -1,0 +1,16 @@
+package com.letsstartcoding.bin;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+
+@Entity
+@NamedQuery(name = "findAll",query = "select * from student" )
+public class student implements Serializable{
+	private static final long serialVersionUID = 1L;
+
+	
+	
+
+}

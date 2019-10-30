@@ -1,0 +1,11 @@
+package com.jdbcTemplate;
+
+public class student {
+
+	
+	private int id;
+	private String fname;
+	private String lname;
+	
+	
+}

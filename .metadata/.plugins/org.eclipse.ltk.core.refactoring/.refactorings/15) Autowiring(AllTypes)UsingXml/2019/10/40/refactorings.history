@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;16) JdbcTemplate Exmaple/src&apos;&#x0D;&#x0A;- Original project: &apos;15) Autowiring(AllTypes)UsingXml&apos;&#x0D;&#x0A;- Destination element: &apos;16) JdbcTemplate Exmaple/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     readme&#x0D;&#x0A;     beans.xml" description="Copy files" destination="=16) JdbcTemplate Exmaple/src" element1="src/readme" element2="src/beans.xml" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1569931671928" units="0" version="1.0"/>
+</session>

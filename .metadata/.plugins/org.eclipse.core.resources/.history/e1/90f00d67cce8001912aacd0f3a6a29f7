@@ -1,0 +1,10 @@
+package com.letsstartcoding.bin;
+
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+
+@Entity
+@NamedQuery(name = "findAll",query = "select * from student" )
+public class student {
+
+}

@@ -1,0 +1,22 @@
+package com.jdbcTemplate;
+
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+public class testapplication {
+
+	
+	public static void main(String[] args) {
+		
+		ApplicationContext c=new ClassPathXmlApplicationContext("beans.xml");
+		
+		studentDao dao=(studentDao) c.getBean("Studentdao");
+		
+		
+		student s = new student(101,"Aniket","Gajjar");
+		
+		dao.savestudent(s);
+	}
+}

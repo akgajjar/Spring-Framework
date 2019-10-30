@@ -1,0 +1,9 @@
+package snippet;
+
+public class Snippet {
+	String query="select * from student where id = "+id;
+			List<Map<String, Object>> retList =jdbctemplate.queryForList(query);
+			return retList;
+		
+}
+

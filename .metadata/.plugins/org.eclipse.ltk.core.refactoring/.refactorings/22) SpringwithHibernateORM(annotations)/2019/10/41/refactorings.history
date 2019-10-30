@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;my/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;22) SpringwithHibernateORM(annotations)&apos;&#x0D;&#x0A;- Destination element: &apos;my/src/main/java&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     22) SpringwithHibernateORM(annotations)/src/com.springframework.bin&#x0D;&#x0A;     22) SpringwithHibernateORM(annotations)/src/com.springframework.dao" description="Copy packages" destination="=my/src\/main\/java" element1="/src&lt;com.springframework.bin" element2="/src&lt;com.springframework.dao" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1570339001289" version="1.0"/>
+</session>

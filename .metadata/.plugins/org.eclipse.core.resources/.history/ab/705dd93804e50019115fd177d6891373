@@ -1,0 +1,26 @@
+-> It is Core Spring Project
+
+-> we Have to Create Spring bean configuration file to create xml file 
+
+
+-> Like ResultSetExtractor, we can use RowMapper interface to fetch the records from the database
+	 using query() method of JdbcTemplate class. In the execute of we need to pass the instance of 
+	 RowMapper now.
+
+* Syntax of query method using RowMapper
+-> public T query(String sql,RowMapper<T> rm)  
+
+
+* RowMapper Interface
+-> RowMapper interface allows to map a row of the relations with the instance of user-defined class.
+ It iterates the ResultSet internally and adds it into the collection. So we don't need to write a lot of 
+ code to fetch the records as ResultSetExtractor.
+
+* Advantage of RowMapper over ResultSetExtractor
+-> RowMapper saves a lot of code becuase it internally adds the data of ResultSet into the collection.
+
+
+* Method of RowMapper interface
+-> It defines only one method mapRow that accepts ResultSet instance and int as the parameter list.
+ Syntax of the method is given below:
+	public T mapRow(ResultSet rs, int rowNumber)throws SQLException  
