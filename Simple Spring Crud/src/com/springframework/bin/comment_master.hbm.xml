@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-Oct-2019, 11:50:04 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.springframework.bin.comment_master" table="COMMENT_MASTER">
+        <id name="C_Id" type="int">
+            <column name="C_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="C_Comment" type="java.lang.String" length="500" not-null="true">
+            <column name="C_COMMENT" />
+        </property>
+        <many-to-one name="user_master" class="com.springframework.bin.user_master"  lazy="false" fetch="select">
+            <column name="U_ID" length="10" not-null="true"/>
+        </many-to-one>
+        <many-to-one name="book_master" class="com.springframework.bin.book_master"  lazy="false" fetch="select">
+            <column name="ISBN"  length="13" not-null="true"/>
+        </many-to-one>
+        <property name="C_Show" type="java.lang.Boolean" not-null="true">
+            <column name="C_SHOW" />
+        </property>
+        <property name="C_TimeStamp" type="java.sql.Timestamp" not-null="true">
+            <column name="C_TIMESTAMP" />
+        </property>
+    </class>
+</hibernate-mapping>

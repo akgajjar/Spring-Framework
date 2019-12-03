@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-Oct-2019, 2:35:51 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.springframework.bin.payment_master" table="PAYMENT_MASTER">
+        <id name="Payment_Id" type="int" length="10">
+            <column name="PAYMENT_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="Payment_Amount" type="java.lang.Double">
+            <column name="PAYMENT_AMOUNT" />
+        </property>
+        <one-to-one name="order" class="com.springframework.bin.order_master" fetch="join" lazy="false" constrained="true" />
+        <property name="Payment_Date" type="java.sql.Timestamp">
+            <column name="PAYMENT_DATE" />
+        </property>
+        <property name="Payment_Mode" type="java.lang.String">
+            <column name="PAYMENT_MODE" />
+        </property>
+    </class>
+</hibernate-mapping>

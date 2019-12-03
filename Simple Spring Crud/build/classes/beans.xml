@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/test" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+	</bean>
+
+
+<bean id="mysessionFactory"  class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  
+        <property name="dataSource" ref="ds"></property>  
+          
+        <property name="mappingResources">  
+        <list>  
+        <value>com//springframework//bin//student.hbm.xml</value> 
+        <value>com//goodreads//bin//user_master.hbm.xml</value> 
+        <value>com//goodreads//bin//book_category_master.hbm.xml</value>  
+        <value>com//goodreads//bin//book_master.hbm.xml</value>  
+        <value>com//goodreads//bin//bookmark_master.hbm.xml</value>
+        <value>com//goodreads//bin//comment_master.hbm.xml</value>
+        <value>com//goodreads//bin//order_master.hbm.xml</value>
+        <value>com//goodreads//bin//order_items_master.hbm.xml</value>
+        <value>com//goodreads//bin//payment_master.hbm.xml</value>
+        <value>com//goodreads//bin//rating_master.hbm.xml</value>      
+        </list>  
+        </property>  
+          
+        <property name="hibernateProperties">  
+            <props>  
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>  
+                <prop key="hibernate.hbm2ddl.auto">update</prop>  
+                <prop key="hibernate.show_sql">true</prop>  
+                  
+            </props>  
+        </property>  
+    </bean>  
+      
+    <bean id="template" class="org.springframework.orm.hibernate3.HibernateTemplate">  
+    <property name="sessionFactory" ref="mysessionFactory"></property>  
+    </bean>  
+      
+	<bean id="studao" class="com.springframework.dao.studentdao" autowire="byType">
+	<property name="template" ref="template"></property>  
+    </bean>  
+
+	<bean id="user_masterdao" class="com.goodreads.daoimpl.User_masterDaoImpl" autowire="byType">
+	<property name="template" ref="template"></property>  
+    </bean>  
+	
+	
+</beans>

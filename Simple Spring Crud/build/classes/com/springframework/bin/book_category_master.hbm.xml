@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-Oct-2019, 11:12:53 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.springframework.bin.book_category_master" table="BOOK_CATEGORY_MASTER">
+        <id name="Cat_Id" type="int">
+            <column name="CAT_ID"  length="10"/>
+            <generator class="increment" />
+        </id>
+        <property name="Cat_Name" type="java.lang.String" length="50" not-null="true">
+            <column name="CAT_NAME" />
+        </property>
+        <property name="Cat_Description" type="java.lang.String" length="500" not-null="true">
+            <column name="CAT_DESCRIPTION" />
+        </property>
+        <set name="books" table="BELONGS_TO_CATEGORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CAT_ID" length="15" unique-key="true" not-null="true"/>
+            </key>
+             <many-to-many entity-name="com.springframework.bin.book_master">
+                   <column name="ISBN"  length="13" not-null="true" unique-key="true"/>
+             </many-to-many> 
+            
+            
+        </set>
+    </class>
+</hibernate-mapping>

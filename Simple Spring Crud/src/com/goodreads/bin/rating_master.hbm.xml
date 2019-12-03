@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-Oct-2019, 9:00:02 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.goodreads.bin.rating_master" table="RATING_MASTER">
+        <composite-id>
+        <key-property name="user" length="10"/>
+        <key-property name="book" length="13"/>
+        </composite-id>
+        
+        <many-to-one name="user" class="com.springframework.bin.user_master" fetch="select" lazy="false">
+            <column name="U_ID" length="10" not-null="true" unique="true"/>
+        </many-to-one>
+        
+        <many-to-one name="book" class="com.springframework.bin.book_master" fetch="select" lazy="false">
+            <column name="ISBN" length="13" not-null="true"  unique="true"/>
+        </many-to-one>
+        
+        <property name="rating" type="int" length="5" not-null="true">
+            <column name="RATING" />
+        </property>
+    </class>
+</hibernate-mapping>

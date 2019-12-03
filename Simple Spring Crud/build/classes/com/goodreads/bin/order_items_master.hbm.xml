@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-Oct-2019, 2:23:23 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.goodreads.bin.order_items_master" table="ORDER_ITEMS_MASTER">
+        <id name="Item_Id" type="int" length="10">
+            <column name="ITEM_ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="book" class="com.springframework.bin.book_master" fetch="select">
+            <column name="ISBN" length="13" not-null="true" />
+        </many-to-one>
+        <many-to-one name="order" class="com.springframework.bin.order_master" fetch="select">
+            <column name="ORDER_ID" length="10" not-null="true" />
+        </many-to-one>
+        <property name="Item_Amount" type="java.lang.Double" length="25" not-null="true">
+            <column name="ITEM_AMOUNT" />
+        </property>
+        <property name="Item_Count" type="int" length="5" not-null="true">
+            <column name="ITEM_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-Oct-2019, 2:03:56 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.springframework.bin.order_master" table="ORDER_MASTER">
+        <id name="Order_Id" type="int" length="10">
+            <column name="ORDER_ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="user" class="com.springframework.bin.user_master" fetch="select" >
+            <column name="U_ID" length="10" not-null="true"   />
+        </many-to-one>
+        <property name="Order_Date" type="java.sql.Timestamp" not-null="true" >
+            <column name="ORDER_DATE" />
+        </property>
+        <property name="Order_Type" type="char" not-null="true">
+            <column name="ORDER_TYPE" />
+        </property>
+        <property name="Order_Days_Of_Lease" type="int" length="5">
+            <column name="ORDER_DAYS_OF_LEASE" />
+        </property>
+        <property name="Order_Amount" type="java.lang.Double" length="25" not-null="true" >
+            <column name="ORDER_AMOUNT" />
+        </property>
+        <property name="Order_Discount" type="java.lang.Double" length="25" not-null="true">
+            <column name="ORDER_DISCOUNT" />
+        </property>
+        <property name="Order_SGST" type="java.lang.Double" length="25" not-null="true">
+            <column name="ORDER_SGST" />
+        </property>
+        <property name="Order_CGST" type="java.lang.Double" length="25" not-null="true">
+            <column name="ORDER_CGST" />
+        </property>
+        <property name="Order_Final_Price" type="java.lang.Double" length="25" not-null="true">
+            <column name="ORDER_FINAL_PRICE" />
+        </property>
+        <property name="Order_Address1" type="java.lang.String" length="200" not-null="true">
+            <column name="ORDER_ADDRESS1" />
+        </property>
+        <property name="Order_Address2" type="java.lang.String" length="200">
+            <column name="ORDER_ADDRESS2" />
+        </property>
+        <property name="Order_City" type="java.lang.String" length="50" not-null="true">
+            <column name="ORDER_CITY" />
+        </property>
+        <property name="Order_State" type="java.lang.String" length="50" not-null="true">
+            <column name="ORDER_STATE" />
+        </property>
+        <property name="pincode" type="int" length="10" not-null="true">
+            <column name="PINCODE" />
+        </property>
+        <set name="items" table="ORDER_ITEMS_MASTER" inverse="true" lazy="true">
+            <key>
+                <column name="ORDER_ID" length="10"/>
+            </key>
+            <one-to-many class="com.springframework.bin.order_items_master" />
+        </set>
+        
+        
+        <one-to-one name="payment" class="com.springframework.bin.payment_master"
+			cascade="save-update" fetch="select" lazy="proxy" />
+    </class>
+</hibernate-mapping>

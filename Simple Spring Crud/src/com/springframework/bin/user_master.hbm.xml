@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-Oct-2019, 11:50:04 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.springframework.bin.user_master" table="USER_MASTER">
+        <id name="U_Id" type="int" length="10">
+            <column name="U_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="U_Fname" type="java.lang.String" length="50" not-null="true" >
+            <column name="U_FNAME" />
+        </property>
+        <property name="U_Mname" type="java.lang.String" length="50" not-null="true">
+            <column name="U_MNAME" />
+        </property>
+        <property name="U_Lname" type="java.lang.String" length="50" not-null="true">
+            <column name="U_LNAME" />
+        </property>
+        <property name="U_Mobile" type="java.lang.String" length="15" not-null="true">
+            <column name="U_MOBILE" />
+        </property>
+        <property name="U_Email" type="java.lang.String" length="50" not-null="true">
+            <column name="U_EMAIL" />
+        </property>
+        <property name="U_Password" type="java.lang.String" length="25" not-null="true">
+            <column name="U_PASSWORD" />
+        </property>
+        <property name="U_Block" type="java.lang.Boolean" not-null="true">
+            <column name="U_BLOCK" />
+        </property>
+        <property name="U_Address1" type="java.lang.String" length="100" not-null="true">
+            <column name="U_ADDRESS1" />
+        </property>
+        <property name="U_Address2" type="java.lang.String" length="100" not-null="false">
+            <column name="U_ADDRESS2" />
+        </property>
+        <property name="U_city" type="java.lang.String" length="50" not-null="true">
+            <column name="U_CITY" />
+        </property>
+        <property name="U_State" type="java.lang.String" length="50" not-null="true">
+            <column name="U_STATE" />
+        </property>
+        <property name="U_Pincode" type="int" length="10" not-null="true">
+            <column name="U_PINCODE" />
+        </property>
+        <property name="U_Img" type="java.sql.Blob"  not-null="false">
+            <column name="U_IMG" />
+        </property>
+        <property name="U_Type" type="java.lang.String" length="50" not-null="true">
+            <column name="U_TYPE" />
+        </property>
+          <property name="U_Creation_Date" type="java.sql.Timestamp"  not-null="true">
+            <column name="U_CREATION_DATE" />
+        </property>
+        <set name="books" table="BOOK_MASTER" inverse="true" lazy="true">
+            <key>
+                <column name="U_ID"  length="10"/>
+            </key>
+            <one-to-many class="com.springframework.bin.book_master" />
+        </set>
+        <set name="comments" table="COMMENT_MASTER" inverse="true" lazy="true">
+            <key>
+                <column name="U_ID" length="10"/>
+            </key>
+            <one-to-many class="com.springframework.bin.comment_master" />
+        </set>
+        <set name="bookmarks" table="BOOKMARK_MASTER" inverse="true" lazy="true">
+            <key>
+                <column name="U_ID" length="10"/>
+            </key>
+            <one-to-many class="com.springframework.bin.bookmark_master" />
+        </set>
+        <set name="ratings" table="RATING_MASTER" inverse="true" lazy="true">
+            <key>
+                <column name="U_ID" length="10"/>
+            </key>
+            <one-to-many class="com.springframework.bin.rating_master" />
+        </set>
+        
+        <set name="orders" table="ORDER_MASTER" inverse="true" lazy="true">
+            <key>
+                <column name="U_ID" length="10"/>
+            </key>
+            <one-to-many class="com.springframework.bin.order_master" />
+        </set>
+    </class>
+</hibernate-mapping>
